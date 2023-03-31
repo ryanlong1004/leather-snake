@@ -1,6 +1,8 @@
 import string
 import random
 
+from view import View
+
 
 def random_letter():
     """Returns a random upper or lower case letter from the english alphabet"""
@@ -20,4 +22,5 @@ def generate_text(length: int, _path: str) -> bool:
 
 
 if __name__ == "__main__":
-    generate_text(1200, "./temp_file.txt")
+    view = View()
+    generate_text(view.args().file_length, view.args().file_path)
