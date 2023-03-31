@@ -1,11 +1,21 @@
+import string
+import random
+
+
+def random_letter():
+    """Returns a random upper or lower case letter from the english alphabet"""
+    return random.choice(string.ascii_letters)
+
+
 def generate_text(length: int, _path: str) -> bool:
     """generates the letter A length times and writes to file
-    
+
     Returns true on success.
-    
+
     """
     with open(_path, "w") as _file:
-        _file.write("A" * length)
+        for _ in range(length):
+            _file.write(random_letter())
         return True
 
 
