@@ -8,7 +8,7 @@ class View:
         self.parser.add_argument(
             "file_length",
             type=int,
-            help="the number of characters to be writtent to the file",
+            help="the number of characters to be written to the file",
         )
 
         self.parser.add_argument("file_path", type=str, help="the path to write the file to")
