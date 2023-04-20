@@ -3,6 +3,10 @@ import random
 
 from view import View
 
+import logging
+
+logging.basicConfig(filename="leather-snake.log", encoding="utf-8", level=logging.INFO)
+
 
 def random_letter():
     """Returns a random upper or lower case letter from the english alphabet"""
@@ -15,9 +19,11 @@ def generate_text(length: int, _path: str) -> bool:
     Returns true on success.
 
     """
+    logging.info("writing to file")
     with open(_path, "w") as _file:
         for _ in range(length):
             _file.write(random_letter())
+            logging.info("writing letter")
         return True
 
 
